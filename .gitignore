@@ -1,0 +1,15 @@
+# node_modules es el directorio donde se almacenan las dependencias
+node_modules/
+
+# Los archivos de entorno que contienen configuraciones sensibles
+.env
+
+# Archivos de logs
+*.log
+
+# Directorio de salida de compilaciones
+dist/
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db

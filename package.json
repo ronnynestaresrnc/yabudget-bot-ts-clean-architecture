@@ -1,0 +1,30 @@
+{
+  "name": "bot_presupuesto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon --ext ts --exec ts-node src/app.ts",
+    "lint": "eslint 'src/**/*.ts'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "prisma": "^6.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "@types/jest": "^29.5.14",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.23.0",
+    "grammy": "^1.35.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9"
+  }
+}

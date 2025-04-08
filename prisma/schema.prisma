@@ -1,0 +1,36 @@
+// prisma/schema.prisma
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model User {
+    id         Int      @id @default(autoincrement())
+    name       String
+    platformId String
+    platform   String
+    budgets    Budget[] // Un usuario tiene muchos presupuestos
+}
+
+model Budget {
+    id         Int        @id @default(autoincrement())
+    name       String
+    amount     Float
+    createdAt  DateTime   @default(now())
+    userId     Int // Referencia al usuario
+    user       User       @relation(fields: [userId], references: [id])
+    categories Category[] // Relación con categorías
+}
+
+model Category {
+    id       Int    @id @default(autoincrement())
+    name     String // Nombre de la categoría (Ej: "Alimentos", "Transporte")
+    limit    Float // Límite de gasto para esta categoría
+    budgetId Int // Relación con el presupuesto
+    budget   Budget @relation(fields: [budgetId], references: [id])
+}
